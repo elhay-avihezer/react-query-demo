@@ -9,7 +9,7 @@ export function useNotes() {
     try {
       setIsLoading(true);
 
-      const newNotes = (await axios.get("http://localhost:5000/notes")).data;
+      const newNotes = (await axios.get("http://localhost:4000/notes")).data;
 
       setNotes(newNotes);
       setIsLoading(false);
@@ -37,7 +37,7 @@ export function useNote(id) {
   async function fetchNote(noteId) {
     try {
       setIsLoading(true);
-      const newNote = (await axios.get(`http://localhost:5000/notes/${noteId}`))
+      const newNote = (await axios.get(`http://localhost:4000/notes/${noteId}`))
         .data;
       setNote(newNote);
       setIsLoading(false);
@@ -63,7 +63,7 @@ export function useCreateNote() {
   async function createNote(input) {
     try {
       setIsLoading(true);
-      const newNote = (await axios.post("http://localhost:5000/notes", input))
+      const newNote = (await axios.post("http://localhost:4000/notes", input))
         .data;
       setIsLoading(false);
       return newNote;
