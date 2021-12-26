@@ -20,6 +20,6 @@ router.render = (req, res) => {
   res.jsonp(response);
 };
 server.use(router);
-server.listen(4000, () => {
+server.listen(3000, () => {
   console.log("JSON Server is running");
 });
